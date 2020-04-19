@@ -1,22 +1,17 @@
 @import '../../variables';
 
-.home-component {    
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    
-    .card-style {
-        border: 1px solid #d1cece;
-        height: 200px;
-        width: 280px;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 2px #d1cece;
-    }
+.home-component {
+  padding: 20px 0;
 
-    .btn-style {
-        margin: 10px;
-    }
+  .card-style {
+    margin: 10px;
+    min-height: 200px;
+    width: 300px;
+  }
+
+  .span-field-style {
+    margin: 0 20px;
+  }
 }
 
 

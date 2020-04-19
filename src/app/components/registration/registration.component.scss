@@ -1,36 +1,35 @@
 @import '../../variables';
+@import '../../../styles.css';
 
-.registration-container {
-    position: absolute;
-    // left: 50%;
-    // width: 25%;
-    min-width: 320px;
-    height: auto;
-    // min-height: 180px;
-    // margin-left: -195px;
-    // margin-bottom: 50px;
-    // margin-top: 167px;
-    background-color: $white;
-    border: 1px solid $theme-color;
-    box-shadow: 2px 2px 5px $theme-color;
-    padding: 30px;
-    border-radius: 10px;
+.registration-component {
+    padding: 20px;
 
-.registration-header {
-    border: 2px solid darkblue;
-    border-radius: 25px;
-    background-color: aqua;
-    text-align: center;
-    box-shadow: 0 1px 3px;
-    margin: 5px;
-}
-.register-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    margin: 10px;
-}
-.input-form {
-    width: 100%;
-}
+    .registration-container {
+        position: absolute;
+        min-width: 320px;
+        height: auto;
+        background-color: $white;
+        border: 1px solid $theme-color;
+        box-shadow: 2px 2px 5px $theme-color;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .registration-header {
+        border: 2px solid darkblue;
+        border-radius: 25px;
+        background-color: aqua;
+        text-align: center;
+        box-shadow: 0 1px 3px;
+        margin: 5px;
+    }
+    .register-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+        margin: 10px;
+    }
+    .input-form {
+        width: 100%;
+    }
+
 }

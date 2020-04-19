@@ -1,45 +1,33 @@
-<div class="registration-header"><h1>REGISTRATION PAGE</h1></div>
-<div class="registration-container">
-        <form #register class="register-form">
-                <mat-form-field class="input-form">
-                    <input
-                        matInput
-                        name="fName"
-                        [(ngModel)]="registerData.fName"
-                        placeholder="First Name"
-                        required>
-                </mat-form-field>
-        
-                <mat-form-field class="input-form">
-                    <input 
-                    matInput
-                    name="lName"
-                    [(ngModel)]="registerData.lName"
-                    placeholder="Last Name"
-                    required>
-                </mat-form-field>
-                
-                <mat-form-field class="input-form">
-                        <input 
-                        matInput
-                        name="emailAddress"
-                        [(ngModel)]="registerData.emailAddress"
-                        placeholder="Email Address"
-                        required>
-                    </mat-form-field>
-                       
-                <mat-form-field class="input-form">
-                        <input 
-                        matInput
-                        name="confirmEmailAddress"
-                        [(ngModel)]="registerData.confirmEmailAddress"
-                        placeholder="ConfirmEmail Address"
-                        required>
-                    </mat-form-field>
-        
-            </form>
-            <div>
-                <button mat-raised-button color="primary" (click)="onSubmitClick()">Submit</button>
-                <button mat-raised-button color="primary" (click)="redirectToLogin()">Login</button>
-            </div>
+<div class="registration-component">
+
+  <div class="registration-header">
+    <h1>REGISTRATION PAGE</h1>
+  </div>
+  <div class="registration-container">
+    <form #register class="register-form">
+      <mat-form-field class="input-form">
+        <input matInput name="fName" [(ngModel)]="registerData.fName" placeholder="First Name" required>
+      </mat-form-field>
+
+      <mat-form-field class="input-form">
+        <input matInput name="lName" [(ngModel)]="registerData.lName" placeholder="Last Name" required>
+      </mat-form-field>
+
+      <mat-form-field class="input-form">
+        <input matInput name="emailAddress" [(ngModel)]="registerData.emailAddress" placeholder="Email Address"
+          required>
+      </mat-form-field>
+
+      <mat-form-field class="input-form">
+        <input matInput name="confirmEmailAddress" [(ngModel)]="registerData.confirmEmailAddress"
+          placeholder="ConfirmEmail Address" required>
+      </mat-form-field>
+
+    </form>
+    <div>
+      <button class="app-btn-style" mat-raised-button color="primary" (click)="onSubmitClick()">Submit</button>
+      <button class="app-btn-style" mat-raised-button color="primary" (click)="redirectToLogin()">Login</button>
+    </div>
+  </div>
+
 </div>

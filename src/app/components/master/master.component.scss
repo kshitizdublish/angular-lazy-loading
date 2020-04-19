@@ -1,7 +1,29 @@
 .master-main-container {
-    .master-router-container {
-        float: right;
-        width: 300px;
-        padding: 200px;
+
+  .app-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: aqua;
+    border-bottom: 1px solid blue;
+    .nav-link {
+      padding: 0 10px;
     }
+    .log-out-link {
+      position: absolute;
+      right: 16px;
+    }
+  }
+
+  .master-router-pages {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    overflow: hidden auto;
+    left: 0;
+    right: 0;
+  }
+
 }

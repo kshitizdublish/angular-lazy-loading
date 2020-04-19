@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-master',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterComponent implements OnInit {
 
-  constructor() { 
-    
-  }
+  constructor(
+    private loginSvc: LoginService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  logOutClicked() {
+    console.log('logOutClicked');
+    this.loginSvc.clearStoredData();
   }
 
 }

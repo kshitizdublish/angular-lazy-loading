@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EmitterService } from './services/emitter.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,11 +11,17 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  constructor() {}
-
-  navigateToPage(pageName: string) {
-    console.log(pageName);
+  constructor(
+    private emitterSvc: EmitterService,
+    private router: Router
+  ) {
+    this.emitterSvc.loginSuccess.subscribe((successLoginFlag: boolean) => {
+      if (successLoginFlag) {
+        this.router.navigate(['/master']);
+      } else {
+        this.router.navigate(['/login']);
+      }
+    });
   }
-
 
 }

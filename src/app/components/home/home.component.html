@@ -19,32 +19,61 @@
     <!-- Property binding -->
     <button [disabled]='buttonStatus'>Submit</button>
     <!-- Event binding -->
-    <button (click)="OnSaveButtonClick($event)">Save</button>
+    <button (click)="onSaveBtnClick($event)">Save</button>
   </div>
 
-  <div class="local-storage-panel card-style">
-    <input matInput type="text" [(ngModel)]="setStoredValue" placeholder="Enter text...">
-    <button class="btn-style store-data primary-btn" mat-raised-button color="primary" (click)="onStoreBtnClick()">Store</button><br />
-    <button class="btn-style show-data primary-btn" mat-raised-button color="primary" (click)="onShowBtnClick()">Show</button>
-    <span>{{ getStoredValue }}</span>
-  </div>
+  <mat-toolbar-row fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayout.lt-lg="column">
 
-  <div class="api-call-pane card-style">
-    <button class="btn-style show-data primary-btn" mat-raised-button color="primary" (click)="getUserDetails()">
-      Call API and show name
-    </button>
-    <span *ngIf="dataLoaded" class="api-name-txt">{{ userName }}</span>
-  </div>
+    <mat-card class="card-style">
+      <mat-card-title>Local Storage</mat-card-title>
+      <mat-card-actions>
+        <mat-toolbar-row>
+          <mat-form-field>
+            <mat-label>Enter name</mat-label>
+            <input matInput type="text" [(ngModel)]="setStoredValue">
+          </mat-form-field>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary" (click)="onStoreBtnClick()">Store</button>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary" (click)="onShowBtnClick()">Show</button>
+          <span class="span-field-style">{{ getStoredValue }}</span>
+        </mat-toolbar-row>
+      </mat-card-actions>
+    </mat-card>
 
-  <div class="card-style">
-    <button class="btn-style store-student-details primary-btn" mat-raised-button color="primary"
-      (click)="storeStudentDetails()">Store Student Detail</button>
-    <button class="btn-style show-student-details primary-btn" mat-raised-button color="primary"
-      (click)="getStudentDetails()">Show Student Last Name</button>
-    <span>{{ stdLastName }}</span>
-    <button class="btn-style show-comment-data primary-btn" mat-raised-button color="primary" (click)="getComments()"
-    >Call API and show Comments</button>
-    <span>{{ user11Email }}</span>
-  </div>
+    <mat-card class="card-style">
+      <mat-card-title>API: Fetch and display data</mat-card-title>
+      <mat-card-actions>
+        <mat-toolbar-row>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary" (click)="getUserDetails()">
+            <span *ngIf="!nameLoading">Show Name</span>
+            <app-spinner *ngIf="nameLoading"></app-spinner>
+          </button>
+          <span class="span-field-style">{{ userName }}</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary" (click)="getComments()">
+            <span *ngIf="!emailLoading">Show Email</span>
+            <app-spinner *ngIf="emailLoading"></app-spinner>
+          </button>
+          <span class="span-field-style">{{ user4Email }}</span>
+        </mat-toolbar-row>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="card-style">
+      <mat-card-title>Store Object in local</mat-card-title>
+      <mat-card-actions>
+        <mat-toolbar-row>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary"
+            (click)="storeStudentDetails()">Store Student Detail</button>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary"
+            (click)="getStudentDetails()">Show Student Last Name</button>
+          <span>{{ stdLastName }}</span>
+        </mat-toolbar-row>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-toolbar-row>
 
 </div>

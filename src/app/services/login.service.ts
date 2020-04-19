@@ -26,7 +26,7 @@ export class LoginService {
       return this.loginJson[1];
     } else {
       return {
-        'message': 'Unauthorised'
+        'message': 'User is not registered'
       };
     }
   }
@@ -48,5 +48,9 @@ export class LoginService {
   // remove token
   removetoken = () => {
     localStorage.removeItem('token');
+  }
+
+  clearStoredData() {
+    localStorage.clear();
   }
 }

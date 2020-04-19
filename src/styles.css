@@ -11,3 +11,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .divider {
     border-bottom: 1px solid aqua;
 }
+
+.app-btn-style {
+    margin: 0 10px;
+}
+
+.error-text-color {
+    color: #de2020;
+}

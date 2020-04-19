@@ -1,3 +1,19 @@
 <div class="master-main-container">
-        <router-outlet class="master-router-container"></router-outlet>
+
+  <mat-toolbar class="app-nav-bar" color="primary">
+    <a routerLink="/master/home" class="nav-link" title="Home">
+      <mat-icon>home</mat-icon>
+    </a>
+    <a routerLink="/master/products" class="nav-link" title="Products">
+      <mat-icon>category</mat-icon>
+    </a>
+    <a routerLink="/login" class="nav-link log-out-link" (click)="logOutClicked()" title="LogOut">
+      <mat-icon>power_settings_new</mat-icon>
+    </a>
+  </mat-toolbar>
+
+  <div  class="master-router-pages">
+    <router-outlet></router-outlet>
+  </div>
+
 </div>
