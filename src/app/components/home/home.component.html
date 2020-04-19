@@ -1,0 +1,50 @@
+<div class="home-component">
+
+  <div class="pipe-container card-style" *ngIf="showPipeContainer">
+    <!-- Two way binding -->
+    <h2>Two-way Binding</h2>
+    <input [(ngModel)]="fullName" /> <br /><br />
+    <p> {{ fullName }} <br />
+      {{ course.students | number }} <br />
+      <!-- {{ course.rating | number:'2.1-1' }} Round value two integer value and one value after decimal point 05.0-->
+      <!-- {{ course.rating | number:'1.1-1' }} Round value one integer value and one value after decimal point 5.0-->
+      {{ course.rating | number:'1.2-2' }} <br />
+      <!--Round value one integer value and two value after decimal point 4.96-->
+      {{ course.price | currency: 'INR':true:'3.2-2' }} <br />
+      {{ course.releasedate | date:'mediumDate' }} <br />
+      {{ course.text }}
+    </p>
+    <!-- String interpolation -->
+    <h1>{{ course.title | uppercase }}</h1>
+    <!-- Property binding -->
+    <button [disabled]='buttonStatus'>Submit</button>
+    <!-- Event binding -->
+    <button (click)="OnSaveButtonClick($event)">Save</button>
+  </div>
+
+  <div class="local-storage-panel card-style">
+    <input matInput type="text" [(ngModel)]="setStoredValue" placeholder="Enter text...">
+    <button class="btn-style store-data primary-btn" mat-raised-button color="primary" (click)="onStoreBtnClick()">Store</button><br />
+    <button class="btn-style show-data primary-btn" mat-raised-button color="primary" (click)="onShowBtnClick()">Show</button>
+    <span>{{ getStoredValue }}</span>
+  </div>
+
+  <div class="api-call-pane card-style">
+    <button class="btn-style show-data primary-btn" mat-raised-button color="primary" (click)="getUserDetails()">
+      Call API and show name
+    </button>
+    <span *ngIf="dataLoaded" class="api-name-txt">{{ userName }}</span>
+  </div>
+
+  <div class="card-style">
+    <button class="btn-style store-student-details primary-btn" mat-raised-button color="primary"
+      (click)="storeStudentDetails()">Store Student Detail</button>
+    <button class="btn-style show-student-details primary-btn" mat-raised-button color="primary"
+      (click)="getStudentDetails()">Show Student Last Name</button>
+    <span>{{ stdLastName }}</span>
+    <button class="btn-style show-comment-data primary-btn" mat-raised-button color="primary" (click)="getComments()"
+    >Call API and show Comments</button>
+    <span>{{ user11Email }}</span>
+  </div>
+
+</div>

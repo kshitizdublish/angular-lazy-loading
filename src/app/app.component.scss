@@ -1,0 +1,21 @@
+.app-component {
+    .app-nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        background-color: aqua;
+        border-bottom: 1px solid blue;
+        .nav-link {
+            padding: 0 10px;
+            font-weight: bold;
+        }
+    }
+    .app-router-pages {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        right: 0;
+    }
+}

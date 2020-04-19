@@ -1,0 +1,33 @@
+<!-- <div class="login-header"><h1>LOGIN PAGE</h1></div> -->
+<div class="login-container">
+    <span class="form-heading">Login Form</span>
+    <div class="divider"></div>
+    <form #login class="login-form">
+        <mat-form-field class="login-input-field">
+            <input matInput type="text" name="emailAddress" #emailAddress="ngModel" [(ngModel)]="loginData.emailAddress"
+                placeholder="Email Address" pattern="[a-zA-Z0-9._-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" maxlength="50"
+                required>
+            <mat-error *ngIf="emailAddress.hasError('pattern') || emailAddress.hasError('email')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailAddress.hasError('required')">
+                Please enter email address
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="login-input-field">
+            <input matInput type="password" name="password" [(ngModel)]="loginData.password" #password="ngModel"
+                placeholder="Password" maxlength="8" required>
+            <mat-error *ngIf="password.hasError('required')">
+                Please enter password
+            </mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <button class="primary-btn" mat-raised-button color="primary" (click)="onLoginClick()">
+                Login
+            </button>
+            <button mat-raised-button color="primary" (click)="onRegisterClick()">Register</button>
+        </div>
+    </form>
+
+</div>
