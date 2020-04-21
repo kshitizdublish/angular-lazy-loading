@@ -1,1 +1,15 @@
 @import '../../../styles.css';
+
+.products-component {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 56px;
+
+    .user-table-panel {
+        .column-width-100 {
+            width: 100px;
+        }
+    }
+}

@@ -1,6 +1,29 @@
 <div class="products-component">
+  <!-- <mat-toolbar>
     <p>{{ fromHomeLocalStr }}</p>
     <button class="app-btn-style primary-btn" mat-raised-button color="primary" (click)="changeStoredValue()">
-        Change Stored Value
+      Change Stored Value
     </button>
+  </mat-toolbar> -->
+
+  <div class="user-table-panel">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="column-width-100"> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="column-width-100"> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
 </div>

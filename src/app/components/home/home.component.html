@@ -22,6 +22,22 @@
     <button (click)="onSaveBtnClick($event)">Save</button>
   </div>
 
+  <div class="update-panel">
+    <button class="app-btn-style warn-btn" mat-raised-button color="warn" (click)="showNewsPopUp()">
+      Latest News
+    </button>
+  </div>
+
+  <!-- <div class="news-popup">
+    <h1 mat-dialog-title>Latest News</h1>
+    <div mat-dialog-content>
+      <p>Today's Headline: 'Go Corona !! Corona Go !!!'</p>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button cdkFocusInitial>Ok</button>
+    </div>
+  </div> -->
+
   <mat-toolbar-row fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayout.lt-lg="column">
 
     <mat-card class="card-style">

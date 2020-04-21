@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { USER_TABLE_DATA } from 'src/app/model/user-details';
+
 
 @Component({
   selector: 'app-products',
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'name'];
+  dataSource = USER_TABLE_DATA;
+
   fromHomeLocalStr: string = '';
 
   constructor() { }
+
 
   ngOnInit() {
     if (localStorage.getItem('storedValue')) {
