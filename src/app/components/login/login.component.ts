@@ -49,8 +49,7 @@ export class LoginComponent implements OnInit {
     if (this.loginData.emailAddress && this.loginData.password) { //should not be empty
       const response = this.loginSvc.loginApi(this.loginData);
       if (response['message'] === 'Authorised') {
-        // save the data
-        this.globalSvc.setUserEmail(this.loginData.emailAddress);
+        this.globalSvc.setUserEmail(this.loginData.emailAddress); // save the data
         localStorage.setItem('emailAddress', this.loginData.emailAddress);
         this.emitterSvc.loginSuccess.emit(true);
       } else {

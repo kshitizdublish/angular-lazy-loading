@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   user4Email: any;
   nameLoading: boolean = false;
   emailLoading: boolean = false;
+  childNameFromParent: string = 'Sujata';
+  parentListenerVar: string = '';
 
   fullName: "Hello Sujata";
   course = {
@@ -72,7 +74,12 @@ export class HomeComponent implements OnInit {
 
   getStudentDetails() {
     const stdData = JSON.parse(this.homeSvc.getValue('studentDetails'));
-    this.stdLastName = stdData.lastName;
+    if (stdData) {
+      this.stdLastName = stdData.lastName;
+    } else {
+      return false;
+    }
+    
   }
 
   getComments() {
@@ -86,6 +93,10 @@ export class HomeComponent implements OnInit {
         console.log('getcomments error = ', error.statusText);
       }
     )
+  }
+
+  parentListner(childLastName: string) {
+    this.parentListenerVar = childLastName;
   }
 
 }

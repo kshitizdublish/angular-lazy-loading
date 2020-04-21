@@ -15,7 +15,6 @@ export class MasterComponent implements OnInit {
   ngOnInit() { }
 
   logOutClicked() {
-    console.log('logOutClicked');
     this.loginSvc.clearStoredData();
   }
 

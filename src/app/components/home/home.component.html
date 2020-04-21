@@ -38,6 +38,13 @@
           <button class="app-btn-style primary-btn" mat-raised-button color="primary" (click)="onShowBtnClick()">Show</button>
           <span class="span-field-style">{{ getStoredValue }}</span>
         </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary"
+            (click)="storeStudentDetails()">Store Student Detail</button>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary"
+            (click)="getStudentDetails()">Show Student Last Name</button>
+          <span>{{ stdLastName }}</span>
+        </mat-toolbar-row>
       </mat-card-actions>
     </mat-card>
 
@@ -62,14 +69,14 @@
     </mat-card>
 
     <mat-card class="card-style">
-      <mat-card-title>Store Object in local</mat-card-title>
+      <mat-card-title>Child Component & From child-prnt: {{parentListenerVar}}</mat-card-title>
       <mat-card-actions>
         <mat-toolbar-row>
-          <button class="app-btn-style primary-btn" mat-raised-button color="primary"
-            (click)="storeStudentDetails()">Store Student Detail</button>
-          <button class="app-btn-style primary-btn" mat-raised-button color="primary"
-            (click)="getStudentDetails()">Show Student Last Name</button>
-          <span>{{ stdLastName }}</span>
+        <!-- child compoment -->
+        <app-child
+          [childListener]="childNameFromParent"
+          (sendFromChild)="parentListner($event)"
+        ></app-child>
         </mat-toolbar-row>
       </mat-card-actions>
     </mat-card>

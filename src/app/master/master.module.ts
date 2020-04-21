@@ -4,6 +4,7 @@ import { MasterRoutingModule } from './master-routing.module';
 import { MasterComponent } from '../components/master/master.component';
 import { HomeComponent } from '../components/home/home.component';
 import { ProductsComponent } from '../components/products/products.component';
+import { ChildComponent } from '../components/child/child.component';
 import { AppSpinnerComponent } from '../components/common/spinner/app-spinner/app-spinner.component';
 
 // import angular-material modules
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     MasterComponent,
     HomeComponent,
     ProductsComponent,
+    ChildComponent,
     AppSpinnerComponent
   ]
 })
