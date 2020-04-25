@@ -1,15 +1,24 @@
 @import '../../../styles.css';
+@import '../../variables';
 
 .products-component {
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 56px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    top: 76px;
+    margin: 20px;
+    border: 1px solid grey;
+    box-shadow: 0 2px 3px grey;
+    padding: 20px;
+    height: 500px;
 
     .user-table-panel {
         .column-width-100 {
             width: 100px;
         }
+    .user-table {
+        width: 100%;
+    }
     }
 }

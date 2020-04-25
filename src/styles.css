@@ -19,3 +19,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .error-text-color {
     color: #de2020;
 }
+
+.success-text-color {
+    color: greenyellow;
+    padding: 10px;
+}
+
+.mat-icon-color {
+    color: #113cda;
+    cursor: pointer;
+}
+
+.header-panel {
+    border: 1px solid grey;
+}
+
+.page-heading {
+    color: #113cda;
+}

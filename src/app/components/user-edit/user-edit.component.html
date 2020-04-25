@@ -1,0 +1,34 @@
+<div class="user-edit-component">
+
+  <!-- card having the input field
+    and showing the user name after changing it, user should be able to save it
+    after saving it, success message should be visible next to the button in green color
+  -->
+  <div class="user-edit-form">
+    <mat-card class="card-style">
+      <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" class="header-panel">
+        <div class="page-heading">Edit User Details</div>
+        <div class="close-panel">
+          <mat-icon class="mat-icon-color" (click)="hideEditMode()" title="Close">cancel</mat-icon>
+        </div>
+      </mat-toolbar-row>
+      <mat-card-actions>
+        <mat-toolbar-row>
+          <mat-form-field>
+            <input matInput type="text" [(ngModel)]="userDetails.name">
+          </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <mat-form-field>
+            <input matInput type="text" [(ngModel)]="userDetails.email">
+          </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button class="app-btn-style primary-btn" mat-raised-button color="primary" (click)="onSaveBtnClick()">Save</button>
+          <span *ngIf="showSuccessMsg" class="success-text-color">User name saved successfully!!!</span>
+        </mat-toolbar-row>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>

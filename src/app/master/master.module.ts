@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
+import { UserEditComponent } from '../components/user-edit/user-edit.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import {MatTableModule} from '@angular/material/table';
     HomeComponent,
     ProductsComponent,
     ChildComponent,
-    AppSpinnerComponent
+    AppSpinnerComponent,
+    UserEditComponent
   ]
 })
 export class MasterModule { }
